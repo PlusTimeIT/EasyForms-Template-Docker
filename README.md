@@ -7,6 +7,10 @@ This is not an example on how to handle user data it is purely showing form usag
 ## Starting Sail
 
 ```
+composer install && npm install
+```
+
+```
 sail up -d && sail npm run dev
 ```
 
