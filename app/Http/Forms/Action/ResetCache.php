@@ -3,8 +3,8 @@
 namespace App\Http\Forms\Action;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use PlusTimeIT\EasyForms\Base\ActionForm;
-use PlusTimeIT\EasyForms\Controllers\Users;
 use PlusTimeIT\EasyForms\Elements\ActionButton;
 use PlusTimeIT\EasyForms\Elements\Alert;
 use PlusTimeIT\EasyForms\Elements\Button;
@@ -15,7 +15,7 @@ use PlusTimeIT\EasyForms\Enums\AlertTriggers;
 use PlusTimeIT\EasyForms\Enums\AlertTypes;
 use PlusTimeIT\EasyForms\Traits\Transformable;
 
-final class ButtonsServer extends ActionForm
+final class ResetCache extends ActionForm
 {
     use Transformable;
 
@@ -24,8 +24,8 @@ final class ButtonsServer extends ActionForm
         parent::__construct();
 
         return $this
-            ->setName('Action\ButtonsServer')
-            ->setTitle('Action Form with conditional icons')
+            ->setName('Action\ResetCache')
+            ->setTitle('Reset Cached Data')
             ->setInline(true);
     }
 
@@ -47,16 +47,6 @@ final class ButtonsServer extends ActionForm
                 ->setCallback('resetCache')
                 ->setOrder(0),
         ];
-    }
-
-    public static function activateUser(request $request)
-    {
-        Users::updateUserStatus($request->id, 'active');
-
-        return ProcessResponse::make()
-            ->success()
-            ->data('You just activated them')
-            ->redirect('reload');
     }
 
     public function alerts(): array
@@ -92,7 +82,7 @@ final class ButtonsServer extends ActionForm
 
     public static function resetCache(request $request)
     {
-        Users::resetCache();
+        Cache::forget('users');
 
         return ProcessResponse::make()->success()->data('Cache reset')->redirect('reload');
     }

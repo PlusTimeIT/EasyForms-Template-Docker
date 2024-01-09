@@ -6,16 +6,12 @@
     <v-sheet>
         <v-row>
             <v-col>
-                <h1>[ Action Form ] Load - Basic Form From Server</h1>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>Load Form from Server action icons
+                <h1>[ Action Form ] Reset and Clear all data</h1>
             </v-col>
         </v-row>
         <v-row>
             <v-col>
-                <FormLoader name="Action\ButtonsServer" />
+                <FormLoader name="Action\ResetCache" />
             </v-col>
         </v-row>
     </v-sheet>
