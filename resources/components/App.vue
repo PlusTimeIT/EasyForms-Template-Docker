@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import router from '../plugins/router'
 
 const drawer = ref(null)
-const currentRoutes = computed(() => router.getRoutes().sort((a, b) => a.meta.order - b.meta.order));
+const currentRoutes = computed(() => router.getRoutes().sort((a, b) => a.meta.order - b.meta.order).filter((route) => route.meta.show));
 
 </script>
 

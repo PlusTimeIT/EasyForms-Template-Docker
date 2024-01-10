@@ -27,6 +27,6 @@
         "lib": ["esnext", "dom"],
         "baseUrl": ".",
     },
-    "include": ["resources/plugins/**/*.ts", "resources/plugins/**/*.d.ts", "resources/plugins/**/*.vue", "env.d.ts", "vite.config.ts"],
+    "include": ["resources/**/*.ts", "resources/**/*.d.ts", "resources/**/*.vue", "env.d.ts", "vue-router.d.ts", "vite.config.ts"],
     "exclude": ["dist/**/*"],
 }
