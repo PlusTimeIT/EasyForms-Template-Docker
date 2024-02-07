@@ -17,3 +17,10 @@ sail up -d && sail npm run dev
 ## Access
 
 Once sail is running with npm dev you can access the project via [Localhost](http://localhost/#/)
+
+## Updates
+
+### 1.0.0
+
+-   Update packages (composer and NPM)
+-   Start versioning the project properly.

@@ -25,8 +25,15 @@
         "removeComments": true,
         "noEmit": true,
         "lib": ["esnext", "dom"],
-        "baseUrl": ".",
+        "baseUrl": "."
     },
-    "include": ["resources/**/*.ts", "resources/**/*.d.ts", "resources/**/*.vue", "env.d.ts", "vue-router.d.ts", "vite.config.ts"],
-    "exclude": ["dist/**/*"],
+    "include": [
+        "resources/**/*.ts",
+        "resources/**/*.d.ts",
+        "resources/**/*.vue",
+        "env.d.ts",
+        "vue-router.d.ts",
+        "vite.config.ts"
+    ],
+    "exclude": ["dist/**/*"]
 }
